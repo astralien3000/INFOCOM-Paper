@@ -39,6 +39,17 @@ IEEEtran, journal, \LaTeX, paper, template.
 
 \section{Robotics/IoT collaboration}
 
+Robots will need to collaborate to fulfill tasks that they cannot do alone at some point.
+To collaborate, they need to communicate to each other their "skills" (what they can or cannot do, example : "I can move on an plane floor, but not stairs").
+Once all the skills have been collected, compared with a mission statement, a mission plan can be generated.
+Once the plan is generated, the controllers can execute this plan via standard communication interfaces.
+
+In the case of robot modularity, where every robot parts can be considered as a standalone system collaborating with others to make a whole robot, this kind of system would enable hardware constructor to focus on the hardware itself.
+With a proper description of the hardware skills, a robot could use a new module with no need to modify the robot's software.
+This would be even mode useful if robots are able to remove/add/replace parts autonomousely.
+
+In the case of a task that is too hard for one robot, the robot could ask the help of other robots or external sensors to reach it's goals.
+
 \section{A common communication protocol}
 
 \subsection{Needed patterns}
