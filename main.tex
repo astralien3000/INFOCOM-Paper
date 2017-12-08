@@ -48,17 +48,41 @@ In the case of robot modularity, where every robot parts can be considered as a 
 With a proper description of the hardware skills, a robot could use a new module with no need to modify the robot's software.
 This would be even mode useful if robots are able to remove/add/replace parts autonomousely.
 
-In the case of a task that is too hard for one robot, the robot could ask the help of other robots or external sensors to reach it's goals.
+In the case of a task that is too hard for one robot, the robot could autonomously ask the help of other robots or external sensors to reach it's goals.
+
+The computing power needed for this kind of system is likely to be too high for being embedded, considering the complexity of missions the robots will be needed to accomplish.
+There is a need to distribute the computing tasks, or (at least partly) execute it in the cloud, taking advantage of the omnipresence of wireless networking.
 
 \section{A common communication protocol}
 
 \subsection{Needed patterns}
+
 \subsubsection{Discovery}
+
+To collaborate, robots will need the help of the network to discover each other.
+We need to discover the robots endpoints (named/addressed data streams) and the type of data exchanged.
+
+The problem solver / planner part will also need to "understand" what kind of actions the robot can do.
+The "skills" can be described with a specific language (PDDL, STRIPS, and co), and served by the robots to be downloaded by the planning part.
+
 \subsubsection{Pub/Sub}
+
+This communication pattern is used when we need the data to be sent to the consumer as fast as possible after it has bee produced.
+For example, the data of a sensor that is used in a (realtime) control system.
+Also, the commands of an controller that is sent to an actuator (real or virtual).
+
 \subsubsection{Req/Res}
 
+This communication pattern is used when the consumer need a big chunck of data, or data that is not updated often, or when requesting a computation task.
+This can be used for example to serve the skills descriptions, where a planned will request only when the robot is discovered.
+This can also be used to run some heavy computation on a server if the client is not powerful enough.
+
 \subsection{The interface of each entities}
+
 \subsubsection{Control interface (sense+act)}
+
+ROS already have some standard sensor/actuator/navigation interfaces that can be used ?
+
 \subsubsection{Skills/Constraints (Plan)}
 
 \section{A "collaboration" planner}
