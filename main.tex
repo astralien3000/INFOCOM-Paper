@@ -122,9 +122,17 @@ And finally, and continuously, the environment need to be discovered through pri
 
 \section{Planning}
 
-\subsection{Expressing the mission of a robot}
-\subsection{Need to discover and get information for planning from control nodes}
-\subsection{Describing the environment + control/planning loop}
+The planning problem can be splitted in 2 parts (PDDL, STRIPS,...) : 
+The domain description, which describe the possible states of the manipulated entities (the environement) and the possible actions (of the robots, in our case).
+The problem description, which basically describes the initial state, and the goal state.
+
+In the case of robotics, the initial state is not really known, so that the problem description is meant to change over time, and be splitted in 2 : 
+
+The goal state, which does not changes unless the user decide otherwize.
+This is the mission of the robot as described previously.
+
+The "initial state", or the current environment state, which will be updated with discovery and envirnment sensing.
+Basically, the planning algorithm will be ran periodically (or on input event) with a different initial state description.
 
 \section{Control}
 
