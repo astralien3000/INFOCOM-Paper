@@ -97,13 +97,28 @@ So, the system making the plan will need a feedback loop to modify it when neede
   \includegraphics[scale=0.40]{img/3layers}
 \end{figure}
 
+The global architecture is a Sense-Plan-Act, but this architecture is not very modular and cannot easily be distributed across several robots.
+Also, Sense-Plan-Act is not well suited for the low level control of a robot (especially if the robot is limited in computing power), where Sense-Act is preferred.
+
+The base architecture can be adapted to a 3 layers architecture (Reactive, Executive, Deliberative).
+The deliberative layer keebs a Sense-Plan-Act pattern, while the reactive layer will keep the simple and distributed low level control of the robot.
+
+The reactive layer only understand low level, short-termed single commands, while the deliberative layer outputs a plan, consisting of a more or less complex sequence of actions.
+The executive layer is here as an adaptation layer between the 2 formers.
+It should also be able to express the actions that the planner will be able to use to solve a problem.
+
 \section{Discovery}
 
 To collaborate, robots will need the help of the network to discover each other.
 We need to discover the robots endpoints (named/addressed data streams) and the type of data exchanged.
 
-The problem solver / planner part will also need to "understand" what kind of actions the robot can do.
+The problem solver / planner part will also need to "understand" what kind of actions the robots can do.
 The "skills" can be described with a specific language (PDDL, STRIPS, and co), and served by the robots to be downloaded by the planning part.
+
+There is three steps of the discovery : 
+First, after the mission is received, the planning system need to discover which actors (robots/IoT devices) can be used.
+Then, it need to dicover the skills of each actors.
+And finally, and continuously, the environment need to be discovered through prior knoledge, or sensing.
 
 \section{Planning}
 
