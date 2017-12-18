@@ -49,7 +49,7 @@ Once the plan is generated, the controllers can execute this plan via standard c
 
 In the case of robot modularity, where every robot parts can be considered as a standalone system collaborating with others to make a whole robot, this kind of system would enable hardware constructor to focus on the hardware itself.
 With a proper description of the hardware skills, a robot could use a new module with no need to modify the robot's software.
-This would be even mode useful if robots are able to remove/add/replace parts autonomousely.
+This would be even more useful if robots are able to remove/add/replace parts autonomousely.
 
 In the case of a task that is too hard for one robot, the robot could autonomously ask the help of other robots or external sensors to reach it's goals.
 
@@ -64,6 +64,10 @@ This collaboration problem, as any robotic application, has 3 kind of components
 
 The environment is what a robot can sense or modify, including physical body of the robot.
 Basically, the environment can be defined by it's state at time T, which can (and should, in the case of a robot's mission) change over time.
+
+Most of the time, not to say always, the environment will not be entirely known by the robotic application.
+A lot of research have been done for environment discovery.
+But in the case of an urbanized environement filled with connected sensors (smart homes, factories, ...), robots can take advantage of external sensors, or even partial "a priori" description of the environment (a building's blueprints).
 
 \subsection{Tasks}
 
@@ -80,10 +84,6 @@ The aim is to find an action sequence (a plan) that will be able to fulfill the 
 \subsection{Robots/IoT devices}
 
 Robots and IoT devices are the executors from which the environment is sensed or modified.
-
-Most of the time, not to say always, the environment will not be entirely known by the robotic application.
-A lot of research have been done for environment discovery.
-But in the case of an urbanized environement filled with connected sensors (smart homes, factories, ...), robots can take advantage of external sensors, or even partial "a priori" description of the environment (a building's blueprints).
 
 As described previously, the robots are able to do some actions, and will need to execute them in a particular sequence to accomplish a mission.
 Since the environment is not completely known, the plan may need to be modified over time.
@@ -135,6 +135,12 @@ The "initial state", or the current environment state, which will be updated wit
 Basically, the planning algorithm will be ran periodically (or on input event) with a different initial state description.
 
 \section{Control}
+
+There is 2 types of controllers : 
+Reactive controllers, that takes short-termed simple commands, sensors states, and outputs lower leve commands to actuators (or lower level reactive controllers).
+Executive controllers, that takes mission plan, environment description, and sends proper commands to one or several reactive controllers.
+
+\section{Communication}
 
 \subsection{Pub/Sub}
 
