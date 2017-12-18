@@ -140,6 +140,16 @@ There is 2 types of controllers :
 Reactive controllers, that takes short-termed simple commands, sensors states, and outputs lower leve commands to actuators (or lower level reactive controllers).
 Executive controllers, that takes mission plan, environment description, and sends proper commands to one or several reactive controllers.
 
+\section{Recurcivity}
+
+Considering modularity and different level of description of the environment and tasks, planners can be considered as controllers for higher level planners.
+Indeed, if during the global mission plan, an action is to "grab object X", this action can be considered as a mission for a lower level planner, that will schedule each action of the robotic arm to fulfill the mission.
+
+\section{bottom-up domain description}
+
+If robots parts can do simple tasks, the parts linked together can do more complex actions that cannot be described in any domain description of the pieces.
+There will be a need to automatically compute new possible tasks that can be done by the set of modules, and make it available to the planner.
+
 \section{Communication}
 
 \subsection{Pub/Sub}
