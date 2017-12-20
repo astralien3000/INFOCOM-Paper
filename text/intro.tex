@@ -1,0 +1,23 @@
+\section{Collaborating IoT Robots}
+
+Robots will need to collaborate to fulfill tasks that they cannot do alone at some point.
+To collaborate, they need to communicate to each other their "skills" (what they can or cannot do, example : "I can move on an plane floor, but not stairs").
+Once all the skills have been collected, compared with a mission statement, a mission plan can be generated.
+Once the plan is generated, the controllers can execute this plan via standard communication interfaces.
+
+In the case of robot modularity, where every robot parts can be considered as a standalone system collaborating with others to make a whole robot, this kind of system would enable hardware constructor to focus on the hardware itself.
+With a proper description of the hardware skills, a robot could use a new module with no need to modify the robot's software.
+This would be even more useful if robots are able to remove/add/replace parts autonomously.
+
+In the case of a task that is too hard for one robot, the robot could autonomously ask the help of other robots or external sensors to reach it's goals.
+
+The computing power needed for this kind of system is likely to be too high for being embedded, considering the complexity of missions the robots will be needed to accomplish.
+There is a need to distribute the computing tasks, or (at least partly) execute it in the cloud, taking advantage of the omnipresence of wireless networking.
+
+\subsection{A concrete use-case}
+\todoEB{reference + quickly describe your mission at the Robotics French Cup.}
+
+\subsection{Related work}
+\todoEB{short paragraph referring papers (de la conf que tu avais repéré), software (Europa, ROS...) etc. that you have found in the domain}
+\todoEB{a short explanation what is the contribution of this paper compared to such prior work}
+
