@@ -23,24 +23,6 @@ These ideas can be applied in the field of modular robotics, and for collaborati
 Eurobot is an international competition for students and young hobbyistes, where the goal is to design robots that are able to accomplish several actions (generally 5).
 For each match, 2 teams of 2 robots have 100 seconds to score, performing the actions on the same table.
 
-% bon, je jette des idées en vrac, j'arrive pas à rédiger...
- - Our team will be composed of two-wheeled robots
- - The robot is designed on a modular way.
- - Each module may have a control board that is linked to the central CAN bus (widely used in industry)
- - The main module is the Rolling Base, which is controlled by a Teensy 3.2
- - The robot may embed a raspberry pi to handle some heavy computing algorithm (A*, Planner ?)
- - Some short range radio communication may be used (Wifi ? Bluetooth ? 802.15.4 ?)
- - For the competition, each year, the modules will need to be changed.
- - The idea would be that if we design the mecanics, and write the "skills" of the module, the robot could integrate it with no further programming !!
-
- - We will also have 3 external sensors.
- - The sensors will be cameras that will recognize some 2D pattern put on the robot to compute it's position. (the team's robots, and adversary robots).
- - The 3 sensors will communicate with each other to triangulate the position
- - and even communicate with the robots to have a better evaluation (kalman/particle filter ?)
- - We could add other sensors (other cameras) to track the objects on the table (machine learning ?)
- 
- - There is also some space where we could put more computing power if needed (simulating the cloud, because communication with the external world is not allowed)
-
 \subsection{Related work}
 
 \todoEB{short paragraph referring papers (de la conf que tu avais repéré), software (Europa, ROS...) etc. that you have found in the domain}
@@ -52,5 +34,8 @@ For each match, 2 teams of 2 robots have 100 seconds to score, performing the ac
  - IoT robots (contrained microcontrollers) \cite{EWSN-IoT-Robot} have been ported to ROS2 with the help of RIOT and NDN \cite{ACM-ICN-IoT-Robotics}.
  - There is some work to design an architecture for planning with ROS \cite{ROSPlan}.
  - There is also some work to distribute planning system ovel several subsystems \cite{NASA-europa-p2p}.
+ - A konwledge sharing database for robot have been described in \cite{Roboearth}
 
 \todoEB{a short explanation what is the contribution of this paper compared to such prior work}
+
+
