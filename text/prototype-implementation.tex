@@ -1,2 +1,20 @@
 \section{Prototype Implementation}
 \todoEB{Describe the actual implementations/parts that you are putting together for the Robotics French Cup use case.}
+
+% bon, je jette des idées en vrac, j'arrive pas à rédiger...
+ - Our team will be composed of two-wheeled robots
+ - The robot is designed on a modular way.
+ - Each module may have a control board that is linked to the central CAN bus (widely used in industry)
+ - The main module is the Rolling Base, which is controlled by a Teensy 3.2
+ - The robot may embed a raspberry pi to handle some heavy computing algorithm (A*, Planner ?)
+ - Some short range radio communication may be used (Wifi ? Bluetooth ? 802.15.4 ?)
+ - For the competition, each year, the modules will need to be changed.
+ - The idea would be that if we design the mecanics, and write the "skills" of the module, the robot could integrate it with no further programming !!
+
+ - We will also have 3 external sensors.
+ - The sensors will be cameras that will recognize some 2D pattern put on the robot to compute it's position. (the team's robots, and adversary robots).
+ - The 3 sensors will communicate with each other to triangulate the position
+ - and even communicate with the robots to have a better evaluation (kalman/particle filter ?)
+ - We could add other sensors (other cameras) to track the objects on the table (machine learning ?)
+ 
+ - There is also some space where we could put more computing power if needed (simulating the cloud, because communication with the external world is not allowed)
